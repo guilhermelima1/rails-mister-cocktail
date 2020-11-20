@@ -1,5 +1,12 @@
-<h1>Special</h1>
+<h1>Special Drink</h1>
 
 <%= @cocktail.name %>
+
+<% @cocktail.doses.each do |d| %>
+    <li><%= d.description %></li>
+<% end %>
+    
+ <hr>   
+ <%= link_to 'Back', cocktails_path %>   
 
 
