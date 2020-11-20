@@ -14,7 +14,7 @@ class DosesController < ApplicationController
       @cocktail = Cocktail.find(params[:cocktail_id])
       @dose.cocktail = @cocktail
       @ingredients = Ingredient.all
-      if @dose.save
+       if @dose.save
         redirect_to @cocktail, notice: "Dose saved"
       else
         render :new
@@ -27,10 +27,8 @@ class DosesController < ApplicationController
         redirect_to cocktails_path
       end
 
-    def :delete
-
-    def doseparams
-        params.require(:dose).permit(:description, :ingredient)
+       def doseparams
+        params.require(:dose).permit(:description, :ingredient_id)
     end
 
     def listingredients

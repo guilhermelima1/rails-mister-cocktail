@@ -1,5 +1,5 @@
 <%= simple_form_for [@cocktail, @dose] do |c| %>
   <%= c.input :description %>
-  <%= c.association :ingredient %>  
+  <%= c.association :ingredient, colection: @ingredients %>  
   <%= c.submit class: "btn btn-info" %>
 <% end %>
